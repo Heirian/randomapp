@@ -1,4 +1,4 @@
-<h1>Edit<h1>
+<h1>Edit</h1>
   <% if @article.errors.any? %>
     <ul>
       <% @article.errors.full_messages.each do |msg| %>
@@ -19,3 +19,9 @@
       <%= f.submit %>
     </p>
   <% end %>
+
+  <p>
+    <%= link_to "Create a Article", new_article_path %> •
+    <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %> •
+    <%= link_to "Back to Articles listing", articles_path %>
+  </p>
